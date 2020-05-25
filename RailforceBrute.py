@@ -103,8 +103,11 @@ with open('bigramfreq.csv', newline='') as csvfile:    #Get expected freq from f
 
 def actual_percentage(text):    #Return percentages of listed bigrams from file in text
     occurances = []
-    for bigram in data:
-        occurances.append(len([m.start() for m in re.finditer(bigram[0], text)]))
+    for bigram in data: #Cycle through all bigrams
+        if(text.find(bigram[0])!=-1):   #Check if any actually exist in text
+            occurances.append(len(re.findall(bigram[0],text)))  #If so check how many (intensive)
+        else:
+            occurances.append(0)    #Otherwise there aren't any so set to 0
     actual_percentages = np.divide(occurances,sum(occurances))
     return actual_percentages
 
