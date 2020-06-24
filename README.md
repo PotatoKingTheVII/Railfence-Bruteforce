@@ -5,7 +5,7 @@ The Bruteforce is done by ordering all combinations with a chi-squared statistic
 
 
 ## File usage
-RailfenceEncDec provides two functions, encryptrail and decryptrail which take (textinput, rail, offset) and return the resulting string. RailforceBrute takes an input at the top of the file for "ciphert" and calculates all valid railfence settings for it (Pretty sure this is roughly O(n^2) so larger inputs will take a while) dumping them to "RawCombos.txt" firstly and then "OrderedList.csv" later.
+RailfenceEncDec provides two functions, encryptrail and decryptrail which take (textinput, rail, offset) and return the resulting string. RailforceBrute takes an input at the top of the file for "ciphert" and calculates all valid railfence settings for it (Pretty sure this is roughly O(n^2) so larger inputs will take a while) dumping them to "RawCombos.txt" firstly and then "OrderedList.csv" later. RailforceBruteMulti is the main file and is the same as RailforceBrute but with multithread support and an option to limit the search space
 
 ## Credit
 Original bigram frequencies from http://practicalcryptography.com/media/cryptanalysis/files/english_bigrams_1.txt
